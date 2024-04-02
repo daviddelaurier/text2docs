@@ -1,4 +1,4 @@
-# pip_library_etl
+# text2docs
 
 `pip_library_etl` is a Python package designed to streamline the creation of docstrings for functions and methods within specified modules, while also providing the capability to effortlessly generate SQL queries tailored to a designated schema. With its intuitive functionality, users can seamlessly generate function calls from natural language input, existing function signatures, or craft new ones using the integrated model. This versatile tool not only enhances documentation generation but also empowers users to compose sophisticated SQL queries with the finesse expected from cutting-edge Language Model Models (LLMs). Elevate your development and data management workflows with the comprehensive capabilities of pip_library_etl.
 
@@ -14,23 +14,19 @@ pip3 install git+https://github.com/PipableAI/pip-library-etl.git
 
 ## Usage
 
-
-### NOTE
-
-If you want to try this model without using your GPU, we have hosted the model on our end.
-To run the library using the playground hosted model, initialize the generator in the following way:
-
+### Run via API
 ```python
 generator = PipEtl(device="cloud")
 ```
 
-If you want to use your own GPU of the local machine (at least 10-12 GB VRAM):
+### Run on local machine (GPU)
+- (at least 10-12 GB VRAM):
 
 ```python
 generator = PipEtl(device="cuda")
 ```
 
-If you want to infer on the CPU of the local machine:
+### Run on local machine (CPU)
 
 ```python
 generator = PipEtl(device="cpu")
@@ -184,19 +180,13 @@ generator = PipEtl(model_key="your_custom_model", device="cpu")
 ```
 
 ## How It Works
-
 - `generate_docstring`: Utilizes a GPU-based language model to analyze Python code and generate corresponding docstrings.
 - `generate_module_docstrings`: Generates documentation for all methods and functions in a specified module.
 - `generate_sql`: Generate SQL queries based on the provided schema and question.
 - `generate_function_call`: Generate a function call based on question, and either a undocumented code or docstring of the related function.
+- 
 ## Dependencies
-
 - `transformers` from Hugging Face
 
-## Contributing
 
-Feel free to contribute to the project by opening issues or submitting pull requests.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License - see the [LICENSE](LICENSE) file for details.
